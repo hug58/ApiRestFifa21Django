@@ -45,19 +45,21 @@ luego ejecuta y crea las migraciones de django:
   docker-compose exec web python manage.py migrate 
 ```
 
-
 #### ejecutar peticiones a la api de fifa21 y guardarlo
+
 
 ```bash
     docker-compose exec web python tools/main.py
 ```
 
-Hay varios jugadores repetidos en la api de fifa(ej:Cristiano), para evitar guardarlos
+Hay varios jugadores repetidos en la api de fifa(ej:Cristiano), para evitar guardarlos use este en vez del anterior
 
 ```bash
     docker-compose exec web python tools/main.py --repeat 0
 ```
 
+
+## Correr gunicorn
 
 ```bash
   docker-compose up
@@ -75,6 +77,8 @@ Hay varios jugadores repetidos en la api de fifa(ej:Cristiano), para evitar guar
 ```bash
     curl http://localhost:8000/api/v1/players?search=Cr&order=desc&page=2
 ```
+
+## Obtener informacion de un equipo
 
 ```bash
     curl -X POST -H "Content-Type: application/json" -d '{"Name": "reaL maDRI "page": 2}' http://localhost:8000/api/v1/team
