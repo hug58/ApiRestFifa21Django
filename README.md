@@ -2,11 +2,17 @@
 guardar data de la api fifa 21 en una database postgres y django rest 
 
 ### Reto algoritmo de ordenamiento
-python algorithm.py --list 1 2 3 3 3 // 1
-python algorithm.py --list 1 2   // -1
-python algorithm.py --list
+```python
+
+la funcion canBeSplitted espera un array[int]
+
+python algorithm.py --list 1 2 3 3 3 //devuelve 1
+python algorithm.py --list 1 2   // devuelve -1
+python algorithm.py // devuelve 0
 
 
+
+```
 
 ## Configurar .env
 Configure su .env para la db
