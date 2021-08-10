@@ -1,0 +1,15 @@
+#.gitignore
+./idea
+Pipfile
+Pipfile.lock
+db.sqlite3
+__pycache__/
+*.pyc
+service
+.env
+.vscode/
+#.gitignore
+media/
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py

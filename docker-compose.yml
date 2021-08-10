@@ -1,0 +1,49 @@
+version: '3.9'
+
+services: 
+
+
+    web:
+        build: 
+            context: .
+
+        env_file: .env
+
+        volumes: 
+            - .:/code
+
+        environment: 
+            - DJANGO_SUPERUSER_EMAIL=admin@mail.com
+            - DJANGO_SUPERUSER_USERNAME=admin
+            - DJANGO_SUPERUSER_PASSWORD=admin
+
+        command: gunicorn webapp.wsgi:application --bind 0.0.0.0:8000
+        
+        depends_on: 
+            - db
+            
+           
+        ports:
+            - "8000:8000"
+
+        links:
+            - db:db
+
+
+
+    db:
+        image: postgres
+
+        #volumes:
+        #    - postgres_data:/var/lib/postgresql/data/
+
+        #environment:
+        #  - POSTGRES_USER=hug58
+        #  - POSTGRES_PASSWORD=123456
+        #  - POSTGRES_DB=bookingDB
+
+        env_file: .env
+
+
+#volumes:
+#  postgres_data:
