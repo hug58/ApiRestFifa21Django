@@ -14,12 +14,14 @@ import  argparse
 from typing import List
 
 def canBeSplitted(array:List[int]) -> int:
-    canBeSplitted:int = 0
+    if not array:return 0
+
     result:int = sum(array)
     count:int = 0
 
     array_a:List[int] = []
     array_b:List[int] = []
+
 
     for i,num in enumerate(array,0):
         
@@ -35,9 +37,8 @@ def canBeSplitted(array:List[int]) -> int:
     if sum(array_a) == sum(array_b):
         # array_b puede ser menor, asi que compruebo si son iguales
         return 1
-    else:
-        return -1
-    return 0
+
+    return -1
 
 
 def main(args:List[int]) -> int:
@@ -53,7 +54,11 @@ if __name__=='__main__':
     )
 
 
-    parser.add_argument('-l','--list', nargs='+', help='<Required> Set flag', required=True, type=int)
+    parser.add_argument('-l','--list', nargs='+', help='<Required> Set flag', required=False, type=int)
     args = parser.parse_args()
+
+    if args.list == None:
+        args.list = []
+        print(args)
 
     print(main(args.list))
