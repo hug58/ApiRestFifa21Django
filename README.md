@@ -5,6 +5,7 @@ guardar data de la api fifa 21 en una database postgres y django rest
 ```python
 
 la funcion canBeSplitted espera un array[int]
+Ten en cuenta que los elementos de la lista esten separados por un espacio
 
 python algorithm.py --list 1 2 3 3 3 //devuelve 1
 python algorithm.py --list 1 2   // devuelve -1
