@@ -2,10 +2,10 @@
 guardar data de la api fifa 21 en una database postgres y django rest 
 
 ### Reto algoritmo de ordenamiento
-```python
+la funcion canBeSplitted espera un array[int].
+ Ten en cuenta que los elementos de la lista esten separados por un espacio
 
-la funcion canBeSplitted espera un array[int]
-Ten en cuenta que los elementos de la lista esten separados por un espacio
+```python
 
 python algorithm.py --list 1 2 3 3 3 //devuelve 1
 python algorithm.py --list 1 2   // devuelve -1
